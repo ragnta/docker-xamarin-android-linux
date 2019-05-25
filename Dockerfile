@@ -9,7 +9,7 @@ RUN echo "deb https://download.mono-project.com/repo/debian preview-stretch main
 
 RUN apt-get update
 
-RUN apt-get -y install bzip2 mono-complete lynx openjdk-8-jdk unzip
+RUN apt-get -y install bzip2 mono-complete lynx openjdk-8-jdk unzip libzip4
 
 RUN mkdir -p /android/sdk
 
