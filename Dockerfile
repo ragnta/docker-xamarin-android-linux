@@ -34,8 +34,8 @@ RUN mv xamarin.android-oss* /android/xamarin && rm xamarin.tar.bz2
 RUN cp -R /android/xamarin/bin/Release/lib/xamarin.android/xbuild/Xamarin /usr/lib/mono/xbuild/
 RUN cp -R /android/xamarin/bin/Release/lib/xamarin.android/xbuild-frameworks/MonoAndroid /usr/lib/mono/xbuild-frameworks/
 RUN curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-RUN alias nuget="mono /usr/local/bin/nuget.exe"
-
+RUN chmod +x "/usr/local/bin/nuget.exe"
+RUN touch /root/.bashrc && echo "alias nuget='mono /usr/local/bin/nuget.exe'" >> /root/.bashrc
 
 ENV ANDROID_NDK_PATH=/android/sdk/ndk-bundle
 ENV ANDROID_SDK_PATH=/android/sdk/
