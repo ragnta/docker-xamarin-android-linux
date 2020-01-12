@@ -20,4 +20,14 @@ Usage:
  - compile:
  `msbuild SolutionFile.sln /p:AndroidSdkDirectory=/android/sdk /restore`
  - debug:
+ 1. `docker run -it --name=compileanddebug -v /home/vagrant/source/xamarin/applicationtest:/app --privileged -v /path/to/usb:/dev/bus/usb -d xamarin:latest` --> mount all of usb interfaces
+ 2. `docker exec -ti compileanddebug bin/bash`
+ 3. Connect mobile device with usb
+ 4. `adb devices` --> check your device
+ 6. Check the ip address of the mobile device
+ 7. `adb connect <ipaddress>:5555` --> add your device with its ipaddress (I hope you are in the same network as the host container)
+ 8. `adb install path/to/apk`
+ 9. Happy!
+
+ FAQ
  TBD
