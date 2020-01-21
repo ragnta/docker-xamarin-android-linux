@@ -20,7 +20,7 @@ Usage:
  - compile:
  `msbuild SolutionFile.sln /p:AndroidSdkDirectory=/android/sdk /restore`
  - debug:
- 1. `docker run -it --name=compileanddebug -v /home/vagrant/source/xamarin/applicationtest:/app --privileged -v /path/to/usb:/dev/bus/usb -d xamarin:latest` --> mount all of usb interfaces
+ 1. `docker run -it --name=compileanddebug -v Path/to/project/on/host:/Path/in/docker --privileged -v /path/to/usb:/dev/bus/usb -d xamarin:latest` --> mount all of usb interfaces
  2. `docker exec -ti compileanddebug bin/bash`
  3. Connect mobile device with usb
  4. `adb devices` --> check your device
